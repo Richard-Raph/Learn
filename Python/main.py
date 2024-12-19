@@ -45,3 +45,30 @@
 
 # number = random.choice(numbers)
 # print(number)
+
+# food = input("What's my favorite food? ")
+#
+# if food == "pizza":
+#     print("Yep! that's amazing!")
+# else:
+#     print("Yuk! that's not it!")
+#
+# print("Thanks for playing")
+
+current = int(input("What's your current balance?: "))
+amount = int(input("How much are you withdrawing?: "))
+
+def withdraw(current, amount):
+    # Check if the account has enough money to withdraw the specified amount
+    if current >= amount:
+        current -= amount
+        return current
+
+balance = withdraw(current, amount)
+print(f"Your new balance is: {balance}")
+
+if balance <= 50:
+    print("You need to make a deposit")
+else:
+    print("Nothing to see here")
+
