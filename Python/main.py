@@ -22,17 +22,18 @@
 
 # Class definition and instance creation
 # class Puppy():
-#     def __init__(self, name, toy):
+#     def __init__(self, name, toy, place):
+#         self.place = place
 #         self.name = name
 #         self.toy = toy
         
 #     def play(self):
-#         print(self.name + " is playing with the " + self.toy)
+#         print(self.name + " is playing with the " + self.toy + " in the " + self.place)
         
-# marble = Puppy('Marble', 'teddy bear')
+# marble = Puppy('Marble', 'teddy bear', 'kitchen')
 # marble.play()
 
-# onyx = Puppy('Onyx', 'lizard')
+# onyx = Puppy('Onyx', 'lizard', 'veranda')
 # onyx.play()
 
 # Modules in python
@@ -55,20 +56,41 @@
 #
 # print("Thanks for playing")
 
-current = int(input("What's your current balance?: "))
-amount = int(input("How much are you withdrawing?: "))
+# current = int(input("What's your current balance?: "))
+# amount = int(input("How much are you withdrawing?: "))
 
-def withdraw(current, amount):
-    # Check if the account has enough money to withdraw the specified amount
-    if current >= amount:
-        current -= amount
-        return current
+# def withdraw(current, amount):
+#     # Check if the account has enough money to withdraw the specified amount
+#     if current >= amount:
+#         current -= amount
+#         return current
 
-balance = withdraw(current, amount)
-print(f"Your new balance is: {balance}")
+# balance = withdraw(current, amount)
+# print(f"Your new balance is: {balance}")
 
-if balance <= 50:
-    print("You need to make a deposit")
-else:
-    print("Nothing to see here")
+# if balance <= 50:
+#     print("You need to make a deposit")
+# else:
+#     print("Nothing to see here")
 
+# Collections
+
+# List
+# cities = [
+#     'Tokyo',
+#     'Dakar',
+#     'Mumbai',
+#     'Buenos Aires'
+# ]
+
+# print(cities[1])
+
+# Dictionary
+symbols = {
+    'bird': 'California quail',
+    'animal': 'Grizzly bear',
+    'flower': 'California poppy',
+    'fruit': 'Avocado'
+}
+
+print(symbols['animal'])
