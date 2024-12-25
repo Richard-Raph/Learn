@@ -86,11 +86,44 @@
 # print(cities[1])
 
 # Dictionary
-symbols = {
-    'bird': 'California quail',
-    'animal': 'Grizzly bear',
-    'flower': 'California poppy',
-    'fruit': 'Avocado'
-}
+# symbols = {
+#     'bird': 'California quail',
+#     'animal': 'Grizzly bear',
+#     'flower': 'California poppy',
+#     'fruit': 'Avocado'
+# }
 
-print(symbols['animal'])
+# print(symbols['animal'])
+
+# spices = [
+#     'salt',
+#     'cumin',
+#     'pepper',
+#     'tumeric'
+# ]
+
+# for spice in spices:
+#     print(spice)
+
+# print('No more boring omelette!')
+
+
+# i = 5
+# print('Count to 100 by 5')
+# while i <= 100:
+#     print(i)
+#     i+=5
+    
+# print('List complete')
+
+fruits = [
+    'salt',
+    'cumin',
+    'pepper',
+    'tumeric'
+]
+
+print('Our fruit selection!')
+
+for fruit in fruits:
+    print(fruit)
