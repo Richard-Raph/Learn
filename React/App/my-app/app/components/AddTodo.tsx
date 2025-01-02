@@ -10,7 +10,12 @@ export default function AddTodo({ submitHandler }: AddTodoProps) {
     const [isFocused, setIsFocused] = useState(false);
 
     const changeHandler = (val: string) => {
-        setText(val);
+        if (val.length > 0) {
+            const formattedText = val.charAt(0).toUpperCase() + val.slice(1);
+            setText(formattedText);
+        } else {
+            setText(val);
+        }
     }
 
     const handleAddTodo = () => {
