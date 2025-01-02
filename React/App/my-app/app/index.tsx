@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, FlatList } from 'react-native';
+import { View, Text, TextInput, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 
 export default function HomeScreen() {
     const [age, setAge] = useState('30');
@@ -13,6 +13,13 @@ export default function HomeScreen() {
         { name: 'Toady', id: '6' },
         { name: 'Bower', id: '7' },
     ]);
+
+    const pressHandler = (id: string) => {
+        console.log(id);
+        setPeople(prevPeople => {
+            return prevPeople.filter(person => person.id != id);
+        })
+    }
 
     return (
         <View style={styles.container}>
@@ -34,10 +41,12 @@ export default function HomeScreen() {
 
             <FlatList
                 data={people}
-                numColumns={2}
+                numColumns={3}
                 keyExtractor={item => item.id}
                 renderItem={({ item }) => (
-                    <Text style={styles.list}>{item.name}</Text>
+                    <TouchableOpacity onPress={() => pressHandler(item.id)}>
+                        <Text style={styles.list}>{item.name}</Text>
+                    </TouchableOpacity>
                 )}
             />
         </View>
