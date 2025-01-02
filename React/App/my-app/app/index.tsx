@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, TextInput, ScrollView, StyleSheet, FlatList } from 'react-native';
+import { View, Text, TextInput, StyleSheet, FlatList } from 'react-native';
 
 export default function HomeScreen() {
     const [age, setAge] = useState('30');
@@ -13,16 +13,6 @@ export default function HomeScreen() {
         { name: 'Toady', id: '6' },
         { name: 'Bower', id: '7' },
     ]);
-
-    // const pressHandler = () => {
-    //     setAge('45');
-    //     setName('Richie');
-    // }
-
-    // const changeName = (names: Array<string>) => {
-    //     const randomIndex = Math.floor(Math.random() * names.length);
-    //     return names[randomIndex];
-    // }
 
     return (
         <View style={styles.container}>
@@ -50,14 +40,6 @@ export default function HomeScreen() {
                     <Text style={styles.list}>{item.name}</Text>
                 )}
             />
-
-                {/* <ScrollView style={styles.container}>
-                {people.map(item => (
-                    <View key={item.key}>
-                        <Text style={styles.list}>{item.name}</Text>
-                    </View>
-                ))}
-            </ScrollView> */}
         </View>
     );
 }
@@ -67,8 +49,6 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 30,
         paddingHorizontal: 20,
-        // alignItems: 'center',
-        // justifyContent: 'center',
     },
     input: {
         width: 200,
