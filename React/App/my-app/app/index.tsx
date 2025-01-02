@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Header from './components/Header';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import TodoItem from './components/TodoItem';
+import { View, StyleSheet, FlatList } from 'react-native';
 
 export default function HomeScreen() {
     const [todos, setTodos] = useState([
@@ -8,6 +9,12 @@ export default function HomeScreen() {
         { text: 'create an app', key: '2' },
         { text: 'play on the switch', key: '3' },
     ]);
+
+    const pressHandler = (key: string) => {
+        setTodos(prevTodos => {
+            return prevTodos.filter(todo => todo.key != key);
+        });
+    }
 
     return (
         <View style={styles.container}>
@@ -19,7 +26,7 @@ export default function HomeScreen() {
                     <FlatList
                         data={todos}
                         renderItem={({ item }) => (
-                            <Text>{item.text}</Text>
+                            <TodoItem item={item} pressHandler={pressHandler} />
                         )}
                     />
                 </View>
