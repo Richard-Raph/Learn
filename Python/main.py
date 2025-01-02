@@ -22,17 +22,18 @@
 
 # Class definition and instance creation
 # class Puppy():
-#     def __init__(self, name, toy):
+#     def __init__(self, name, toy, place):
+#         self.place = place
 #         self.name = name
 #         self.toy = toy
         
 #     def play(self):
-#         print(self.name + " is playing with the " + self.toy)
+#         print(self.name + " is playing with the " + self.toy + " in the " + self.place)
         
-# marble = Puppy('Marble', 'teddy bear')
+# marble = Puppy('Marble', 'teddy bear', 'kitchen')
 # marble.play()
 
-# onyx = Puppy('Onyx', 'lizard')
+# onyx = Puppy('Onyx', 'lizard', 'veranda')
 # onyx.play()
 
 # Modules in python
@@ -45,3 +46,84 @@
 
 # number = random.choice(numbers)
 # print(number)
+
+# food = input("What's my favorite food? ")
+#
+# if food == "pizza":
+#     print("Yep! that's amazing!")
+# else:
+#     print("Yuk! that's not it!")
+#
+# print("Thanks for playing")
+
+# current = int(input("What's your current balance?: "))
+# amount = int(input("How much are you withdrawing?: "))
+
+# def withdraw(current, amount):
+#     # Check if the account has enough money to withdraw the specified amount
+#     if current >= amount:
+#         current -= amount
+#         return current
+
+# balance = withdraw(current, amount)
+# print(f"Your new balance is: {balance}")
+
+# if balance <= 50:
+#     print("You need to make a deposit")
+# else:
+#     print("Nothing to see here")
+
+# Collections
+
+# List
+# cities = [
+#     'Tokyo',
+#     'Dakar',
+#     'Mumbai',
+#     'Buenos Aires'
+# ]
+
+# print(cities[1])
+
+# Dictionary
+# symbols = {
+#     'bird': 'California quail',
+#     'animal': 'Grizzly bear',
+#     'flower': 'California poppy',
+#     'fruit': 'Avocado'
+# }
+
+# print(symbols['animal'])
+
+# spices = [
+#     'salt',
+#     'cumin',
+#     'pepper',
+#     'tumeric'
+# ]
+
+# for spice in spices:
+#     print(spice)
+
+# print('No more boring omelette!')
+
+
+# i = 5
+# print('Count to 100 by 5')
+# while i <= 100:
+#     print(i)
+#     i+=5
+    
+# print('List complete')
+
+fruits = [
+    'salt',
+    'cumin',
+    'pepper',
+    'tumeric'
+]
+
+print('Our fruit selection!')
+
+for fruit in fruits:
+    print(fruit)
