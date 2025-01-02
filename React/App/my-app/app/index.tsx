@@ -1,9 +1,18 @@
 import { useState } from 'react';
-import { View, Text, Button, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TextInput, ScrollView, StyleSheet, FlatList } from 'react-native';
 
 export default function HomeScreen() {
     const [age, setAge] = useState('30');
     const [name, setName] = useState('World');
+    const [people, setPeople] = useState([
+        { name: 'Shaun', id: '1' },
+        { name: 'Roshi', id: '2' },
+        { name: 'Mario', id: '3' },
+        { name: 'Luigi', id: '4' },
+        { name: 'Peach', id: '5' },
+        { name: 'Toady', id: '6' },
+        { name: 'Bower', id: '7' },
+    ]);
 
     // const pressHandler = () => {
     //     setAge('45');
@@ -32,9 +41,23 @@ export default function HomeScreen() {
                 onChangeText={(val) => setAge(val)}
             />
             <Text>Name: {name}, Age: {age}</Text>
-            {/* <View style={styles.button}>
-                <Button title='Change name' />
-            </View> */}
+
+            <FlatList
+                data={people}
+                numColumns={2}
+                keyExtractor={item => item.id}
+                renderItem={({ item }) => (
+                    <Text style={styles.list}>{item.name}</Text>
+                )}
+            />
+
+                {/* <ScrollView style={styles.container}>
+                {people.map(item => (
+                    <View key={item.key}>
+                        <Text style={styles.list}>{item.name}</Text>
+                    </View>
+                ))}
+            </ScrollView> */}
         </View>
     );
 }
@@ -42,17 +65,23 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        paddingTop: 30,
+        paddingHorizontal: 20,
+        // alignItems: 'center',
+        // justifyContent: 'center',
     },
     input: {
+        width: 200,
+        margin: 10,
+        padding: 8,
         borderWidth: 1,
         borderColor: '#777',
-        padding: 8,
-        margin: 10,
-        width: 200,
     },
-    button: {
+    list: {
+        padding: 10,
+        fontSize: 20,
         marginTop: 20,
-    }
+        marginHorizontal: 5,
+        backgroundColor: 'pink',
+    },
 });
