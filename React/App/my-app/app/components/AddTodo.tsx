@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, Button, TextInput, StyleSheet } from 'react-native';
+import { View, Alert, Button, TextInput, StyleSheet } from 'react-native';
 
 interface AddTodoProps {
     submitHandler: (text: string) => void;
@@ -16,7 +16,13 @@ export default function AddTodo({ submitHandler }: AddTodoProps) {
     const handleAddTodo = () => {
         if (text.trim()) {
             submitHandler(text);
-            setText('');
+            if (text.length > 3) {
+                setText('');
+            }
+        } else {
+            Alert.alert('NICE! 🤦🏽‍♂️', 'Please enter a valid todo', [
+                { text: 'Understood', onPress: () => console.log('alert closed') }
+            ]);
         }
     };
 
@@ -30,9 +36,9 @@ export default function AddTodo({ submitHandler }: AddTodoProps) {
                 onBlur={() => setIsFocused(false)}
                 style={StyleSheet.flatten([styles.input, isFocused && styles.inputFocused])}
             />
-            <Button 
+            <Button
                 color='coral'
-                title='Add Todo' 
+                title='Add Todo'
                 onPress={handleAddTodo}
             />
         </View>

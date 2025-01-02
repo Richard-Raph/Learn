@@ -26,7 +26,7 @@ export default function HomeScreen() {
                 ];
             });
         } else {
-            Alert.alert('OOPS!', 'Todos must be over 3 characters long', [
+            Alert.alert('OOPS! 😮', 'Todos must be over 3 characters long', [
                 { text: 'Understood', onPress: () => console.log('alert closed') }
             ]);
         }
