@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from './components/Header';
 import TodoItem from './components/TodoItem';
 import { View, StyleSheet, FlatList } from 'react-native';
+import AddTodo from './components/AddTodo';
 
 export default function HomeScreen() {
     const [todos, setTodos] = useState([
@@ -16,12 +17,20 @@ export default function HomeScreen() {
         });
     }
 
+    const submitHandler = (text: string) => {
+        setTodos(prevTodos => {
+            return [
+                { text: text, key: Math.random().toString() },
+                ...prevTodos
+            ];
+        });
+    }
+
     return (
         <View style={styles.container}>
-            {/* header */}
             <Header />
             <View style={styles.content}>
-                {/* Todo form */}
+                <AddTodo submitHandler={submitHandler} />
                 <View style={styles.list}>
                     <FlatList
                         data={todos}
