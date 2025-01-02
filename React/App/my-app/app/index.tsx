@@ -6,22 +6,24 @@ import { View, Alert, StyleSheet, FlatList, Keyboard, TouchableWithoutFeedback }
 
 export default function HomeScreen() {
     const [todos, setTodos] = useState([
-        { text: 'buy coffee', key: '1' },
-        { text: 'create an app', key: '2' },
-        { text: 'play on the switch', key: '3' },
+        { text: 'Buy coffee', key: '1' },
+        { text: 'Create an app', key: '2' },
+        { text: 'Play on the switch', key: '3' },
     ]);
 
     const pressHandler = (key: string) => {
         setTodos(prevTodos => {
             return prevTodos.filter(todo => todo.key != key);
         });
-    }
+    };
 
     const submitHandler = (text: string) => {
         if (text.length > 3) {
+            const formattedText = text.charAt(0).toUpperCase() + text.slice(1);
+
             setTodos(prevTodos => {
                 return [
-                    { text: text, key: Math.random().toString() },
+                    { text: formattedText, key: Math.random().toString() },
                     ...prevTodos
                 ];
             });
@@ -30,7 +32,7 @@ export default function HomeScreen() {
                 { text: 'Understood', onPress: () => console.log('alert closed') }
             ]);
         }
-    }
+    };
 
     return (
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -49,7 +51,7 @@ export default function HomeScreen() {
                 </View>
             </View>
         </TouchableWithoutFeedback>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -64,5 +66,5 @@ const styles = StyleSheet.create({
     list: {
         flex: 1,
         marginTop: 20,
-    },
-})
+    }
+});

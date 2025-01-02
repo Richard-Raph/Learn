@@ -5,7 +5,7 @@ export default function Header() {
         <View style={styles.header}>
             <Text style={styles.title}>My Todos</Text>
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({

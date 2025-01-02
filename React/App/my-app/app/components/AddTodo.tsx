@@ -9,14 +9,7 @@ export default function AddTodo({ submitHandler }: AddTodoProps) {
     const [text, setText] = useState('');
     const [isFocused, setIsFocused] = useState(false);
 
-    const changeHandler = (val: string) => {
-        if (val.length > 0) {
-            const formattedText = val.charAt(0).toUpperCase() + val.slice(1);
-            setText(formattedText);
-        } else {
-            setText(val);
-        }
-    }
+    const changeHandler = (val: string) => setText(val);
 
     const handleAddTodo = () => {
         if (text.trim()) {
@@ -60,5 +53,5 @@ const styles = StyleSheet.create({
     },
     inputFocused: {
         borderBottomColor: 'coral',
-    },
+    }
 });

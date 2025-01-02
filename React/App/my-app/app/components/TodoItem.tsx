@@ -41,5 +41,5 @@ const styles = StyleSheet.create({
         padding: 8,
         marginTop: 0,
         marginLeft: 'auto',
-    },
+    }
 });
