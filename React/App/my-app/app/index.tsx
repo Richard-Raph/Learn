@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Header from './components/Header';
 import AddTodo from './components/AddTodo';
 import TodoItem from './components/TodoItem';
-import { View, Alert, StyleSheet, FlatList } from 'react-native';
+import { View, Alert, StyleSheet, FlatList, Keyboard, TouchableWithoutFeedback } from 'react-native';
 
 export default function HomeScreen() {
     const [todos, setTodos] = useState([
@@ -33,20 +33,22 @@ export default function HomeScreen() {
     }
 
     return (
-        <View style={styles.container}>
-            <Header />
-            <View style={styles.content}>
-                <AddTodo submitHandler={submitHandler} />
-                <View style={styles.list}>
-                    <FlatList
-                        data={todos}
-                        renderItem={({ item }) => (
-                            <TodoItem item={item} pressHandler={pressHandler} />
-                        )}
-                    />
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+            <View style={styles.container}>
+                <Header />
+                <View style={styles.content}>
+                    <AddTodo submitHandler={submitHandler} />
+                    <View style={styles.list}>
+                        <FlatList
+                            data={todos}
+                            renderItem={({ item }) => (
+                                <TodoItem item={item} pressHandler={pressHandler} />
+                            )}
+                        />
+                    </View>
                 </View>
             </View>
-        </View>
+        </TouchableWithoutFeedback>
     )
 }
 
