@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 export default function Home() {
     return (
         <View style={styles.container}>
-            <Text>Home Screen</Text>
+            <Text style={{ fontFamily: 'Nunito_700Bold' }}>Home Screen</Text>
         </View>
     );
 }
