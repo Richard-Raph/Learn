@@ -1,5 +1,5 @@
-import Home from './screens/Home';
 import { useEffect } from 'react';
+import Navigator from './routes/HomeStack';
 import * as SplashScreen from 'expo-splash-screen';
 import { Nunito_700Bold, Nunito_400Regular, useFonts } from '@expo-google-fonts/nunito';
 
@@ -22,6 +22,6 @@ export default function App() {
   }
 
   return (
-    <Home />
+    <Navigator />
   );
 }
