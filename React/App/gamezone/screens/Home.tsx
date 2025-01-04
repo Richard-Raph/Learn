@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { globalStyles } from '../styles/Global';
-import { View, Text, Button } from 'react-native';
+import { View, FlatList, TouchableOpacity, Text } from 'react-native';
 
 interface NavigationProps {
     navigation: {
-        navigate: (screen: string) => void;
+        navigate: (screen: string, params?: object) => void;
     };
 }
 
@@ -14,15 +14,20 @@ export default function Home({ navigation }: NavigationProps) {
         { title: 'Gotta Catch Them All (again)', rating: 4, body: 'lorem ipsum', key: '2' },
         { title: 'Not so "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '3' },
     ]);
-    
-    const pressHandler = () => {
-        navigation.navigate('Review');
-    }
 
     return (
         <View style={globalStyles.container}>
-            <Text style={globalStyles.titleText}>Home Screen</Text>
-            <Button title='Go To Review' onPress={pressHandler} />
+            <FlatList
+                data={reviews}
+                renderItem={({ item }) => (
+                    <TouchableOpacity
+                        activeOpacity={0.7}
+                        onPress={() => navigation.navigate('Review', item)}
+                    >
+                        <Text style={globalStyles.titleText}>{item.title}</Text>
+                    </TouchableOpacity>
+                )}
+            />
         </View>
     );
 }

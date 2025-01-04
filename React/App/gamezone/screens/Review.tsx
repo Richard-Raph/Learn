@@ -3,20 +3,16 @@ import { View, Text, Button } from 'react-native';
 
 interface NavigationProps {
     navigation: {
-        goBack: () => void;
+        getParam: (params?: object) => void;
     }
 }
 
 export default function Review({ navigation }: NavigationProps) {
-
-    const pressHandler = () => {
-        navigation.goBack();
-    }
-
     return (
         <View style={globalStyles.container}>
-            <Text style={globalStyles.titleText}>Review Screen</Text>
-            <Button title='Back To Home' onPress={pressHandler} />
+            <Text style={globalStyles.titleText}>{ navigation.getParam('title') }</Text>
+            <Text style={globalStyles.titleText}>{ navigation.getParam('body') }</Text>
+            <Text style={globalStyles.titleText}>{ navigation.getParam('rating') }</Text>
         </View>
     );
 }
