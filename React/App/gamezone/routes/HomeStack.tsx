@@ -1,6 +1,6 @@
 import Home from '../screens/Home';
 import Review from '../screens/Review';
-import { createAppContainer, getActiveChildNavigationOptions } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 const screens = {
