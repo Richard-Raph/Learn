@@ -10,15 +10,15 @@
   },
   "dependencies": {
     "@expo-google-fonts/nunito": "^0.2.3",
-    "@react-navigation/native": "^7.0.14",
     "expo": "~52.0.23",
     "expo-font": "~13.0.2",
     "expo-splash-screen": "~0.29.18",
     "expo-status-bar": "~2.0.0",
     "react": "18.3.1",
     "react-native": "0.76.5",
-    "react-native-safe-area-context": "4.12.0",
-    "react-native-screens": "~4.4.0",
+    "react-native-gesture-handler": "~2.20.2",
+    "react-native-reanimated": "~3.16.1",
+    "react-navigation": "^4.4.4",
     "react-navigation-drawer": "^2.7.2",
     "react-navigation-stack": "^2.10.4"
   },
