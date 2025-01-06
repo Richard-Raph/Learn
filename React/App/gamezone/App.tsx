@@ -1,25 +1,20 @@
-import { useEffect } from 'react';
-import Navigator from './routes/Drawer';
-import * as SplashScreen from 'expo-splash-screen';
-import { Nunito_700Bold, Nunito_400Regular, useFonts } from '@expo-google-fonts/nunito';
-
-SplashScreen.preventAutoHideAsync();
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
-  const [loaded, error] = useFonts({
-    Nunito_700Bold,
-    Nunito_400Regular,
-  });
-
-  useEffect(() => {
-    if (loaded || error) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded, error]);
-
-  if (!loaded && !error) {
-    return null;
-  }
-
-  return <Navigator />
+  return (
+    <View style={styles.container}>
+      <Text>Open up App.tsx to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
