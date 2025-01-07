@@ -23,6 +23,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-splash-screen",
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Nunito-Bold.ttf",
+            "./assets/fonts/Nunito-Regular.ttf"
+          ]
+        }
+      ]
+    ]
   }
 }
